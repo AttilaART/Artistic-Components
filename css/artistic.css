@@ -1,0 +1,334 @@
+/* CSS Reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
+  --primary-color: #1b4079;
+  --secondary-color: #4D7C8A;
+  --accent-color: color-mix(in oklab, #7F9C96, black 50%);
+  --background-color: color-mix(in oklab, #8FAD88, white 75%);
+
+  --primary-corresponding-color: var(--background-color);
+  --secondary-corresponding-color: var(--background-color);
+  --accent-corresponding-color: var(--background-color);
+  --background-corresponding-color: var(--primary-color);
+
+  --text-color: var(--background-color);
+
+  --spacing-extra-small: 0.25rem;
+  --spacing-small: 0.5rem;
+  --spacing-normal: 1rem;
+  --spacing-large: 2rem;
+  --spacing-extra-large: 4rem;
+
+  --timing-extra-short: 0.0625s;
+  --timing-short: 0.125s;
+  --timing-normal: 0.25s;
+  --timing-long: 0.5s;
+  --timing-extra-long: 1s;
+
+  --border-style: 1px solid;
+  --border-radius: 1rem;
+
+  background-color: var(--background-color);
+}
+
+@property --target-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --mix-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+/* Layout */
+
+/* Container */
+
+.container {
+  padding: var(--spacing-normal);
+  margin: 0 auto;
+  transition: width var(--timing-normal);
+
+  width: 1450px;
+
+  @media (max-width: 1535px) {
+    width: 1200px;
+  }
+
+  @media (max-width: 1280px) {
+    width: 950px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 700px;
+  }
+
+  @media (max-width: 768px) {
+    width: 510px;
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+}
+
+.container-fluid {
+  padding: var(--spacing-normal);
+  max-width: 100%;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--spacing-normal);
+}
+
+/* Grid utility classes */
+
+.grid.c1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid.c2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.c3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid.c4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid.c5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid.c6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid.c7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid.c8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid.c9 {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid.c10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid.r1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.grid.r2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.grid.r3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.grid.r4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.grid.r5 {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.grid.r6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.grid.r7 {
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+}
+
+.grid.r8 {
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+}
+
+.grid.r9 {
+  grid-template-rows: repeat(9, minmax(0, 1fr));
+}
+
+.grid.r10 {
+  grid-template-rows: repeat(10, minmax(0, 1fr));
+}
+
+/* Colors */
+
+.primary {
+  --mix-color: var(--primary-color);
+  --target-color: var(--mix-color);
+}
+
+.secondary {
+  --mix-color: var(--secondary-color);
+  --target-color: var(--mix-color);
+}
+
+.accent {
+  --mix-color: var(--accent-color);
+  --target-color: var(--mix-color);
+}
+
+.background {
+  --mix-color: var(--background-color);
+  --target-color: var(--mix-color);
+}
+
+/* Shades */
+.darker {
+  --target-color: color-mix(in oklab, var(--mix-color), black 50%);
+}
+
+.dark {
+  --target-color: color-mix(in oklab, var(--mix-color), black 25%);
+}
+
+.light {
+  --target-color: color-mix(in oklab, var(--mix-color), white 25%);
+}
+
+.lighter {
+  --target-color: color-mix(in oklab, var(--mix-color), white 50%);
+}
+
+/* Content */
+
+
+button {
+  all: unset;
+  text-align: center;
+  border-radius: var(--border-radius);
+  color: var(--primary-corresponding-color);
+
+  --mix-color: var(--primary-color);
+  --target-color: var(--mix-color);
+  background-color: var(--target-color);
+  padding: var(--spacing-normal);
+  transition: background-color var(--timing-normal);
+}
+
+button.outline {
+  color: var(--target-color);
+  border: var(--border-style) var(--target-color);
+  background-color: transparent;
+  transition: color var(--timing-normal), border var(--timing-normal);
+}
+
+button:hover {
+  --hover-color: color-mix(in oklab, var(--target-color), white 25%);
+  background-color: var(--hover-color);
+}
+
+button.outline:hover {
+  color: var(--hover-color);
+  border: var(--border-style) var(--hover-color);
+  background-color: transparent;
+}
+
+a {
+  --mix-color: var(--primary-color);
+  --target-color: var(--mix-color);
+  color: var(--target-color);
+  transition: color var(--timing-normal);
+}
+
+a:hover {
+  --hover-color: color-mix(in oklab, var(--target-color), white 25%);
+  color: var(--hover-color);
+}
+
+a:visited {
+  --visited-color: color-mix(in oklab, var(--target-color), black 25%)
+}

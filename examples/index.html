@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="../css/artistic.css" rel="stylesheet">
+</head>
+
+<style>
+  .color-square {
+    width: var(--spacing-large);
+    height: var(--spacing-large);
+    display: inline-block;
+    background-color: var(--target-color);
+  }
+</style>
+
+<body>
+  <section class="grid c4 r1 container">
+    <div>
+      <h4>Type scale</h4>
+      <h1>H1</h1>
+      <h2>H2</h2>
+      <h3>H3</h3>
+      <h4>Subheading</h4>
+      <p>Paragraph</p>
+      <small>Small Text</small>
+    </div>
+    <div>
+      <h4>Colors</h4>
+      <div class="grid c1 r4">
+
+        <div>
+          <article class="color-square primary darker"></article>
+          <article class="color-square primary dark"></article>
+          <article class="color-square primary"></article>
+          <article class="color-square primary light"></article>
+          <article class="color-square primary lighter"></article>
+        </div>
+
+        <div>
+          <article class="color-square secondary darker"></article>
+          <article class="color-square secondary dark"></article>
+          <article class="color-square secondary"></article>
+          <article class="color-square secondary light"></article>
+          <article class="color-square secondary lighter"></article>
+        </div>
+
+        <div>
+          <article class="color-square accent darker"></article>
+          <article class="color-square accent dark"></article>
+          <article class="color-square accent"></article>
+          <article class="color-square accent light"></article>
+          <article class="color-square accent lighter"></article>
+        </div>
+
+        <div>
+          <article class="color-square background darker"></article>
+          <article class="color-square background dark"></article>
+          <article class="color-square background"></article>
+          <article class="color-square background light"></article>
+          <article class="color-square background lighter"></article>
+        </div>
+
+      </div>
+    </div>
+    <div>
+      <h4>Buttons / Links</h4>
+      <div class="grid c1">
+        <button>Primary</button>
+        <button class="secondary">Secondary</button>
+        <button class="accent">Accent</button>
+
+        <button class="outline">Primary</button>
+        <button class="secondary outline">Secondary</button>
+        <button class="accent outline">Accent</button>
+
+        <p><a class="primary" href="">Primary</a></p>
+        <p><a class="secondary" href="">Secondary</a></p>
+        <p><a class="accent" href="">Accent</a></p>
+      </div>
+
+    </div>
+    <div>
+      <article>
+        Card
+      </article>
+      <section>
+        Section
+      </section>
+      <details class="dropdown">
+        <summary>Dropdown</summary>
+        <ul>
+          <li>Option</li>
+          <li>Option</li>
+          <li>Option</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+</body>
+
+</html>
